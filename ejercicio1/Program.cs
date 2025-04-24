@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ejercicio1
@@ -10,18 +11,29 @@ namespace ejercicio1
     {
         static void Main(string[] args)
         {
+            for (int i = 6 ; i >= 1 ; i--) 
+            { 
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("El sistema inicia en:  " + i);
+                Console.ForegroundColor= ConsoleColor.Green;
+                Console.Beep(800,500);
+                Thread.Sleep(1000);
+            }
+            Console.Beep(1300, 1200);
+            Console.Clear();
             //fiebre = resfriado
             //fiebre, dolor de cabeza = infeccion
             //fiebre dolor de cabeza, hpoglusemia = covid
-            Console.WriteLine("¿Tienes fiebre? [si/no]");
+            Console.Write("¿Tienes fiebre? [si/no]: ");
             string respuesta = Console.ReadLine();
             if (respuesta == "si")
             {
-                Console.WriteLine("¿Tienes dolor de cabeza? [si/no] ");
+                Console.Write("¿Tienes dolor de cabeza? [si/no]: ");
                 string respuesta2 = Console.ReadLine();
                 if (respuesta2 == "si")
                 {
-                    Console.WriteLine("¿Tienes hipoglusemia? [si/no] ");
+                    Console.Write("¿Tienes hipoglusemia? [si/no]: ");
                     string respuesta3 = Console.ReadLine();
                     if(respuesta3 == "si")
                     {
